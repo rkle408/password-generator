@@ -24,7 +24,12 @@ function generatePassword() {
 // Need prompts to decide what password will be made of, following set conditions:
 function passwordPrompts(){
   console.log("Prompts actually go here.")
-  passwordLength = parseInt(prompt("How long do you want your password to be? (Please choose a number from 8-128.)"))
+  passwordLength = parseInt(prompt("How long do you want your password to be? (Please choose a number from 8-128.)"));
+
+  if(passwordLength <8 || passwordLength > 128) {
+    alert("Length must be between 8 and 128.")
+    return false;
+  }
 }
 
 // Assignment Code
