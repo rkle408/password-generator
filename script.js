@@ -19,13 +19,18 @@ var userCombos = [];
 function generatePassword() {
   //Test that button is working: 
   //console.log("Yay! You did it!");
-  //If you press this button, then the prompts should appear, therefore prompt function needs to go here.
-  var choices = passwordPrompts();
+  let password = "";
+  
+  for(var i = 0; i < passwordLength; i++) {
+    var secureArray = Math.floor(Math.random() * userCombos.length);
+    password = password + userCombos[secureArray];
+  }
+  return password;
 }
 
 // Need prompts to decide what password will be made of, following set conditions:
 function passwordPrompts(){
-  console.log("Prompts actually go here.")
+  //console.log("Prompts actually go here.")
   passwordLength = parseInt(prompt("How long do you want your password to be? (Please choose a number from 8-128.)"));
 
   // Need to make sure password is within our parameters, otherwise password will not generate:
@@ -38,14 +43,17 @@ function passwordPrompts(){
   if(confirm("Do you want to use lowercase letters?")) {
     // Need a new array to be generated for possible combinations of characters for password, will make new var to house this new array: userCombos
     userCombos = userCombos.concat(lowerCase);
+    console.log(userCombos);
   }
 
   if(confirm("Do you want to use UPPERCASE letters?")) {
     userCombos = userCombos.concat(upperCase);
+    console.log(userCombos);
   }
 
   if(confirm("Do you want to use special characters? (i.e., !, @, #)")) {
     userCombos = userCombos.concat(specialCharacters);
+    console.log(userCombos);
   }
   return true;
 }
@@ -55,11 +63,14 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  var appropriateAnwers = passwordPrompts();
 
-  passwordText.value = password;
+  if(appropriateAnwers) {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
 
+    passwordText.value = password;
+  }
 }
 
 // Add event listener to generate button
