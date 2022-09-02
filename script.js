@@ -25,12 +25,17 @@ function generatePassword() {
     var secureArray = Math.floor(Math.random() * userCombos.length);
     password = password + userCombos[secureArray];
   }
+  console.log(password.length);
   return password;
 }
 
 // Need prompts to decide what password will be made of, following set conditions:
 function passwordPrompts(){
   //console.log("Prompts actually go here.")
+
+  // Need to clear array every time "Generate" button is clicked!!!:
+  userCombos = [];
+
   passwordLength = parseInt(prompt("How long do you want your password to be? (Please choose a number from 8-128.)"));
 
   // Need to make sure password is within our parameters, otherwise password will not generate:
