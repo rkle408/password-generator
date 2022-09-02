@@ -17,4 +17,14 @@ Through using my own knowledge bank and researching how to build this generator,
 8. "Random Password Generator using Javascript." Dev. <https://dev.to/code_mystery/random-password-generator-using-javascript-6a>. Date accessed: Wednesday, August 31, 2022.
 
 ## Screenshots:
-1. 
+1. 25 characters, with all character types selected (lower case, upper case, numeric, special characters):
+![screencapture-rkle408-github-io-password-generator-2022-09-01-19_58_45](https://user-images.githubusercontent.com/108099192/188051020-c23bca87-2989-40f7-a11b-d6725bf40795.png)
+
+2. 25 characters, with only lower case letters:
+![screencapture-rkle408-github-io-password-generator-2022-09-01-20_00_08](https://user-images.githubusercontent.com/108099192/188051102-fc5d6087-e268-4aba-96a5-2d318ec8c635.png)
+
+3. If length answer violates parameters of being a number (if user typed out "nine" instead of typing "9", or length selected is less than 8 or more than 128 characters):
+![letters](https://user-images.githubusercontent.com/108099192/188051157-d24d63e0-f6d4-40e5-bebe-2efcfe0c7deb.JPG)
+
+4. Pop up message from 3:
+![letters2](https://user-images.githubusercontent.com/108099192/188051244-ccbf5858-75fc-42d8-ae99-487a10962be6.JPG)
