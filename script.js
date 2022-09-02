@@ -50,6 +50,11 @@ function passwordPrompts(){
     userCombos = userCombos.concat(upperCase);
     console.log(userCombos);
   }
+  
+  if(confirm("Do you want to use numbers?")) {
+    userCombos = userCombos.concat(numeric);
+    console.log(userCombos);
+  }
 
   if(confirm("Do you want to use special characters? (i.e., !, @, #)")) {
     userCombos = userCombos.concat(specialCharacters);
