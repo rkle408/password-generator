@@ -83,5 +83,12 @@ function writePassword() {
   }
 }
 
+function myFunction() {
+    var copyText = document.getElementById("password");
+    copyText.select();
+    navigator.clipboard.writeText(copyText.value);
+    alert("Copied the password: " + copyText.value);
+}
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
