@@ -1,6 +1,6 @@
 # password-generator
 
-## Develop a password generator that produces a random sequence based on your preferences for length and different types of characters
+## Developed a password generator that produces a random sequence based on your preferences for length and different types of characters
 
 
 
