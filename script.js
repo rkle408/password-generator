@@ -36,7 +36,7 @@ function passwordPrompts(){
 
   // Need to clear array every time "Generate" button is clicked!!!:
   userCombos = [];
-  passwordText.value = "";
+  passwordText.value = ""; // Add this to reset the password text when a new password is generated, especially if the second time, there are no character types selected
 
   passwordLength = parseInt(prompt("How long do you want your password to be? (Please choose a number from 8-128.)"));
 
@@ -67,7 +67,7 @@ function passwordPrompts(){
     userCombos = userCombos.concat(specialCharacters);
     console.log(userCombos);
   } 
-
+// Needed to add if there are no character types selected, then user must be alerted of this.
   else if (userCombos == 0) {
     alert("Please select character types to generate a password!");
   }
