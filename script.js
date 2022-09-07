@@ -31,10 +31,12 @@ function generatePassword() {
 
 // Need prompts to decide what password will be made of, following set conditions:
 function passwordPrompts(){
+  var passwordText = document.querySelector("#password");
   //console.log("Prompts actually go here.")
 
   // Need to clear array every time "Generate" button is clicked!!!:
   userCombos = [];
+  passwordText.value = "";
 
   passwordLength = parseInt(prompt("How long do you want your password to be? (Please choose a number from 8-128.)"));
 
@@ -64,6 +66,10 @@ function passwordPrompts(){
   if(confirm("Do you want to use special characters? (i.e., !, @, #)")) {
     userCombos = userCombos.concat(specialCharacters);
     console.log(userCombos);
+  } 
+
+  else if (userCombos == 0) {
+    alert("Please select character types to generate a password!");
   }
   return true;
 }
@@ -74,11 +80,10 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   var appropriateAnwers = passwordPrompts();
+  var passwordText = document.querySelector("#password");
 
-  if(appropriateAnwers) {
+  if(appropriateAnwers && userCombos != 0) {
     var password = generatePassword();
-    var passwordText = document.querySelector("#password");
-
     passwordText.value = password;
   }
 }
